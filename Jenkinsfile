@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'Echo "I am the build"; sleep 3; echo "SUCCESSFULL"'
+        sh 'echo "I am the build"; sleep 3; echo "SUCCESSFULL"'
       }
     }
     stage('Test') {
