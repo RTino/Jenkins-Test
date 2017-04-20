@@ -9,20 +9,35 @@ pipeline {
     stage('Test') {
       steps {
         parallel(
-          "Test": {
+          "Unittests": {
             sh 'echo I am the test; sleep 4'
             
           },
-          "Test2": {
+          "System Integration tests": {
             sh 'echo I am another test; sleep 6'
             
           }
         )
       }
     }
-    stage('Deploy') {
+    stage('Deploy to DEV') {
       steps {
         sh 'echo Deploying; sleep 6'
+      }
+    }
+    stage('Deploy to INT') {
+      steps {
+        sh 'echo Deploying to INT'
+      }
+    }
+    stage('Deploy to PRE') {
+      steps {
+        sh 'echo Deploying to PRE'
+      }
+    }
+    stage('Deploying to PROD') {
+      steps {
+        sh 'echo Deploying to PROD'
       }
     }
   }
