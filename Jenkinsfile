@@ -16,6 +16,10 @@ pipeline {
           "System Integration tests": {
             sh 'echo I am another test; sleep 6'
             
+          },
+          "Test3": {
+            fileExists 'a'
+            
           }
         )
       }
